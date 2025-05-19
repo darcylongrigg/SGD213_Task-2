@@ -5,9 +5,8 @@ public class GameManager : MonoBehaviour
 {
    [SerializeField] private int lives = 3;
 
-    public void NextLevel()
+    public void NextLevel() //send player to the next level
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 }

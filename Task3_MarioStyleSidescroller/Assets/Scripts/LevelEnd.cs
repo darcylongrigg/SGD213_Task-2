@@ -6,16 +6,16 @@ public class LevelEnd : MonoBehaviour
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>(); //create a reference to the game manager
     }
     
     
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision) //when something collides with object
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player") //if the player has collided with object
         {
-            Debug.Log("Sending to Next Level");
-            gameManager.NextLevel();
+            Debug.Log("Sending to Next Level"); 
+            gameManager.NextLevel(); //send the player to the next level
         }
     }
 
