@@ -1602,6 +1602,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 20
       objectReference: {fileID: 0}
@@ -1837,6 +1841,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1142924027}
     m_Modifications:
+    - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 2683253138709997691, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_Name
       value: Grass
@@ -2337,7 +2349,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3259232436643183765, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259232436643183765, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
       propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259232436643183765, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
+      propertyPath: m_EdgeRadius
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4371272882104580266, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
@@ -2388,7 +2408,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3259232436643183765, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

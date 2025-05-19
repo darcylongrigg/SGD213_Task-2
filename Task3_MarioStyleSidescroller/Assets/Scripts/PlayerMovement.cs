@@ -47,8 +47,10 @@ private void Awake()
     private void HorizontalMovement()  
     {
         inputAxis = Input.GetAxis("Horizontal"); // Gets horizontal input (A/D or Left/Right arrow keys)
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime); //Changes the movement speed to match the players input
+        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed /** Time.deltaTime*/); //Changes the movement speed to match the players input
     }
+
+
 
     private void GroundedMovement() //Handles jumping when player is on the ground
     {
