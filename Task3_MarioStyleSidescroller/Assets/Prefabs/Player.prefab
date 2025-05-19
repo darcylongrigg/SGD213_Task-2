@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7902907037475358293}
   - component: {fileID: 3259232436643183765}
   - component: {fileID: 1833489885883389591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -176,3 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  maxJumpHeight: 4
+  maxJumpTime: 1
