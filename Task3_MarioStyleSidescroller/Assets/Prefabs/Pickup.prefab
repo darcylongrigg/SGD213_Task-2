@@ -147,3 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323730939415e6748a2dd11d9257c9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeSprite: {fileID: 5813457823378813359, guid: e84b26d18239a604096bfa004840b4b7, type: 3}
+  disabledSprite: {fileID: -8972826568896545197, guid: 7ee65f6ac77b7a54d8a21c3f9b12bc22, type: 3}
+  pickupTimer: 5

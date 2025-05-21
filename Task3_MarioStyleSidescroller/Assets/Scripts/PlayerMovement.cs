@@ -6,13 +6,14 @@ public class PlayerMovement : MonoBehaviour
     private new Rigidbody2D rigidbody;
 
     private Vector2 velocity;
-    private float inputAxis;
 
     
     public float moveSpeed = 8f;
     public float maxJumpHeight = 4f;
     public float maxJumpTime = 1f;
-    public int maxJumps = 1; //max jumps player can do
+    
+    
+    [SerializeField] private int maxJumps = 1; //max jumps player can do
     private int jumpsRemaining;
     
 
@@ -21,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded { get; private set; }
     private bool wasGrounded;
-    //public bool jumping { get; private set; }
 
 
 
-private void Awake()
+
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -34,7 +35,6 @@ private void Awake()
 
     private void Update()
     {
-        HorizontalMovement();
 
         grounded = rigidbody.Raycast(Vector2.down); // Checks if player is touching the ground by casting a box down
 
@@ -45,19 +45,13 @@ private void Awake()
 
         ApplyGravity(); // Apply gravity when player is not grounded
         
-        if (Input.GetButtonDown("Jump")) //If the jump button is pressed (space), start jumping
-        {
-            Jump();
-        }
-
         wasGrounded = grounded;
     }
 
 
 
-    private void HorizontalMovement()  
+    public void HorizontalMovement(float inputAxis)
     {
-        inputAxis = Input.GetAxis("Horizontal"); // Gets horizontal input (A/D or Left/Right arrow keys)
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed /** Time.deltaTime*/); //Changes the movement speed to match the players input
     }
 
@@ -66,7 +60,6 @@ private void Awake()
     private void GroundedMovement() //Handles jumping when player is on the ground
     {
         velocity.y = Mathf.Max(velocity.y, 0f); //Stops any downward movement (resets fall velocity)
-        //jumping = velocity.y > 0f; // Check if player is currently going up
         if (!wasGrounded) //when player lands on the ground
         {
             jumpsRemaining = maxJumps; //reset jumpsRemaining
@@ -74,20 +67,26 @@ private void Awake()
     }
 
 
-    private void Jump()
+    public void Jump()
     {
         if (jumpsRemaining > 0) //check if player has any jumps remaining
         {
             velocity.y = jumpForce; //apply jump force
-            //jumping = true;
             jumpsRemaining--;
         }
     }
 
-    public void doubleJump() //allows player to double jump
+    public void DoubleJumpEnable() //allows player to double jump
     {
-        maxJumps = 2;
+        maxJumps = 2; //sets max jumps to 2
     }
+
+    public void DoubleJumpDisable() //disables double jump
+    {
+        maxJumps = 1; //sets max jumps back to 1
+    }
+
+
 
     private void ApplyGravity()
     {
