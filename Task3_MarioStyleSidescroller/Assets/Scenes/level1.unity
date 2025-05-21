@@ -1081,7 +1081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 170316521343821049, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_Size.x
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 170316521343821049, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_Size.y
@@ -1089,11 +1089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_Size.x
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1079285297265739361, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939292033242777990, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7939292033242777990, guid: 2b0810e84b58651438210221e4438860, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1684,7 +1684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4482724048578936326, guid: 7ea16690c9e9d4c4bb6c28615d5bb74f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 4482724048578936326, guid: 7ea16690c9e9d4c4bb6c28615d5bb74f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2340,6 +2340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1833489885883389591, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
+      propertyPath: doubleJump
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3259232436643183765, guid: 687ee2d28e3fac04b92aa8fe114e3a45, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -2424,6 +2428,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1014865772669682552, guid: ecf6cc27ca8a881408113935d97543f9, type: 3}
       propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014865772669682552, guid: ecf6cc27ca8a881408113935d97543f9, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5635364258094932304, guid: ecf6cc27ca8a881408113935d97543f9, type: 3}

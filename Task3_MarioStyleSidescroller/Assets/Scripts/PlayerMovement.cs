@@ -12,12 +12,16 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 8f;
     public float maxJumpHeight = 4f;
     public float maxJumpTime = 1f;
+    public int maxJumps = 1; //max jumps player can do
+    private int jumpsRemaining;
+    
 
     public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f); //Calculates the jump force needed to reach the max jump height in half the jump time
     public float gravity => (-2f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2f), 2); // Calculates the gravity needed to bring the player back down
 
     public bool grounded { get; private set; }
-    public bool jumping { get; private set; }
+    private bool wasGrounded;
+    //public bool jumping { get; private set; }
 
 
 
@@ -40,6 +44,13 @@ private void Awake()
         }
 
         ApplyGravity(); // Apply gravity when player is not grounded
+        
+        if (Input.GetButtonDown("Jump")) //If the jump button is pressed (space), start jumping
+        {
+            Jump();
+        }
+
+        wasGrounded = grounded;
     }
 
 
@@ -55,15 +66,28 @@ private void Awake()
     private void GroundedMovement() //Handles jumping when player is on the ground
     {
         velocity.y = Mathf.Max(velocity.y, 0f); //Stops any downward movement (resets fall velocity)
-        jumping = velocity.y > 0f; // Check if player is currently going up
-        
-        if (Input.GetButtonDown("Jump")) //If the jump button is pressed (space), start jumping
+        //jumping = velocity.y > 0f; // Check if player is currently going up
+        if (!wasGrounded) //when player lands on the ground
         {
-            velocity.y = jumpForce; //apply jump force
-            jumping = true;
+            jumpsRemaining = maxJumps; //reset jumpsRemaining
         }
     }
 
+
+    private void Jump()
+    {
+        if (jumpsRemaining > 0) //check if player has any jumps remaining
+        {
+            velocity.y = jumpForce; //apply jump force
+            //jumping = true;
+            jumpsRemaining--;
+        }
+    }
+
+    public void doubleJump() //allows player to double jump
+    {
+        maxJumps = 2;
+    }
 
     private void ApplyGravity()
     {
