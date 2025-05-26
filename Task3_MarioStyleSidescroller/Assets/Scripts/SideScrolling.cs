@@ -6,6 +6,8 @@ public class SideScrolling : MonoBehaviour
 
     private float minX;
     private float maxX;
+    [SerializeField] private float FollowHeight = 2f; // The minimum Y height at which the camera starts following
+    [SerializeField] private float BaseHeight = 0f; // The minimum Y height at which the camera starts following
 
     private void Awake()
     {
@@ -36,8 +38,24 @@ public class SideScrolling : MonoBehaviour
     private void LateUpdate() //ensures this happens AFTER the players position has been updated
     {
         Vector3 cameraPosition = transform.position; // Get current camera position
-        cameraPosition.x = player.position.x; // Set the cameras x position to match the players x position
+
+        cameraPosition.x = player.position.x;
         cameraPosition.x = Mathf.Clamp(cameraPosition.x, minX, maxX);
+
+
+        if (player.position.y > FollowHeight) // if the player goes above the set height, start following them (y axis)
+        {
+            cameraPosition.y = Mathf.Lerp(cameraPosition.y, player.position.y, Time.deltaTime * 5f);
+
+        }
+
+        else
+        {
+            // Otherwise, return the camera to a base Y position
+            cameraPosition.y = Mathf.Lerp(cameraPosition.y, BaseHeight, Time.deltaTime * 5f);
+        }
+
+
         transform.position = cameraPosition; // move camera to new position
     }
 }
