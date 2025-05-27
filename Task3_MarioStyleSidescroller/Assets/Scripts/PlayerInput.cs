@@ -20,5 +20,7 @@ public class PlayerInput : MonoBehaviour
             playerMovement.Jump();
         }
 
+        bool HoldingJump = Input.GetButton("Jump");
+        playerMovement.ApplyGravity(HoldingJump); // Apply gravity when player is not grounded
     }
 }

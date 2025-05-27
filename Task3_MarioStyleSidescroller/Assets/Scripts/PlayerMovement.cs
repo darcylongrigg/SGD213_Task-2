@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             GroundedMovement();
         }
 
-        ApplyGravity(); // Apply gravity when player is not grounded
+      
         
         wasGrounded = grounded;
     }
@@ -52,7 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void HorizontalMovement(float inputAxis)
     {
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed /** Time.deltaTime*/); //Changes the movement speed to match the players input
+        velocity.x = inputAxis * moveSpeed; //Instantly sets horizontal velocity based on player input and movement speed
+     
     }
 
 
@@ -78,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void DoubleJumpEnable() //allows player to double jump
     {
+
         maxJumps = 2; //sets max jumps to 2
     }
 
@@ -88,9 +90,9 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private void ApplyGravity()
+    public void ApplyGravity(bool HoldingJump)
     {
-        bool falling = velocity.y < 0f || !Input.GetButton("Jump"); //checks if player is falling OR has let go of the jump button
+        bool falling = velocity.y < 0f || !HoldingJump; //checks if player is falling OR has let go of the jump button
         float multiplier = falling ? 2f : 1f; //stronger gravity when falling to make it 'feel' better
 
         velocity.y += gravity * multiplier * Time.deltaTime;

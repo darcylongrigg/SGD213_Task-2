@@ -20,13 +20,14 @@ public class PowerUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) //when something collides with object
     {
-        if(collision.tag == "Player") //if the player has collided with object
+        if (collision.tag == "Player") //if the player has collided with object
         {
             Debug.Log("Double Jump Enabled");
-            DisablePickup();
             playerMovement.DoubleJumpEnable();
-            StartCoroutine(PowerUpEnd(pickupTimer)); 
+            DisablePickup();
+            StartCoroutine(PowerUpEnd(pickupTimer));
         }
+
     }
 
 

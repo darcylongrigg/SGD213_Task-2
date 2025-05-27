@@ -7,7 +7,7 @@ public class PlayerSpawn : MonoBehaviour
 
     public void SetSpawn()
     {
-        spawnPoint = transform.position; //set the spawnPoint to the current trnasform position
+        spawnPoint = transform.position; //set the spawnPoint to the current transform position
     }
 
     public void SendToSpawn() //send the player back to their spawn point
