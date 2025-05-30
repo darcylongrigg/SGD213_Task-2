@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PowerUp : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
+    private GameObject player;
+    private Movement movement;
     private Collider2D pickupCollider;
     private SpriteRenderer spriteRenderer;
 
@@ -13,7 +14,8 @@ public class PowerUp : MonoBehaviour
 
     void Start()
     {
-        playerMovement = FindObjectOfType<PlayerMovement>(); //create a reference to the playerMovement script
+        player = GameObject.FindWithTag("Player"); //create a reference to the player
+        movement = player.GetComponent<Movement>(); //create a reference to the players playerMovement component
         pickupCollider = GetComponent<Collider2D>(); //create a reference to the Collider
         spriteRenderer = GetComponent<SpriteRenderer>(); //create a reference to the spriteRenderer
     }
@@ -23,7 +25,7 @@ public class PowerUp : MonoBehaviour
         if (collision.tag == "Player") //if the player has collided with object
         {
             Debug.Log("Double Jump Enabled");
-            playerMovement.DoubleJumpEnable();
+            movement.DoubleJumpEnable();
             DisablePickup();
             StartCoroutine(PowerUpEnd(pickupTimer));
         }
@@ -35,7 +37,7 @@ public class PowerUp : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Debug.Log("Double Jump Disabled");
-        playerMovement.DoubleJumpDisable(); //disable double jump
+        movement.DoubleJumpDisable(); //disable double jump
         ResetPickup(); //reset pickup
     }
 

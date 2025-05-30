@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
 
     private Vector2 velocity;
 
     
-    public float moveSpeed = 8f;
-    public float maxJumpHeight = 4f;
-    public float maxJumpTime = 1f;
+    [SerializeField]private float moveSpeed = 2f;
+    [SerializeField]private float maxJumpHeight = 4f;
+    [SerializeField]private float maxJumpTime = 1f;
     
     
     [SerializeField] private int maxJumps = 1; //max jumps player can do

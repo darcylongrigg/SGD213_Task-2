@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1654743375774450362}
   - component: {fileID: 3300356393298842412}
   - component: {fileID: 2788485366691522740}
+  - component: {fileID: 3899191284076516214}
+  - component: {fileID: -1052206983749306513}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -213,3 +215,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &3899191284076516214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818073340292471860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad2e62455967eb4db95988ea0d8fde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+--- !u!114 &-1052206983749306513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818073340292471860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4abfac447c6da4382de2ca5b9a3d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  maxJumpHeight: 4
+  maxJumpTime: 1
+  maxJumps: 1
